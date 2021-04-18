@@ -20,9 +20,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-
-
-
         val edtMoney = findViewById<EditText>(R.id.edtMoney)
         val edtInterest = findViewById<EditText>(R.id.edtInterest)
         val edtTime = findViewById<EditText>(R.id.edtTime)
@@ -45,9 +42,6 @@ class MainActivity : AppCompatActivity() {
 
 
             startActivity(intent)
-
-
-
 
 
         }
