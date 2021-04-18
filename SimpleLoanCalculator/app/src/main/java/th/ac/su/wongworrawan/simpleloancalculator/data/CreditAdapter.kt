@@ -29,8 +29,8 @@ class CreditAdapter(private val context: Context,
         val rowView = inflater.inflate(R.layout.list_item_credit,null)
 
         rowView.tvTitle.text = dataSource[position].promo_name
-        rowView.tvSubtitle.text = dataSource[position].promo_description
-        rowView.tvDetail.text = dataSource[position].promo_code.toString()
+        rowView.tvSubtitle.text = "promotion code : "+dataSource[position].promo_code.toString()
+        rowView.tvDetail.text = dataSource[position].promo_description
 
         val res = context.resources
         val drawableId:Int =

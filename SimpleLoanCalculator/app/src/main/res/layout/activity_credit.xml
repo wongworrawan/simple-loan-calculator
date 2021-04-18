@@ -20,6 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="สินเชื่อแนะนำ"
+            android:textColor="#8A2BE2"
             android:layout_gravity="center"
             android:textSize="28dp"
             android:layout_marginBottom="30dp"/>
