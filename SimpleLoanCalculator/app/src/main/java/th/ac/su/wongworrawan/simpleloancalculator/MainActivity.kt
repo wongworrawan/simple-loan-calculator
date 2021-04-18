@@ -3,6 +3,7 @@ package th.ac.su.wongworrawan.simpleloancalculator
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ListView
@@ -13,18 +14,11 @@ import th.ac.su.wongworrawan.simpleloancalculator.data.Credit
 import th.ac.su.wongworrawan.simpleloancalculator.data.CreditAdapter
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val jsonFileString = getJsonDataFromAsset(
-            applicationContext,
-            "credit_data.json"
-        )
-
-        val gson = Gson()
-        val listItemType = object : TypeToken<ArrayList<Credit>>(){}.type
-        var CreditList : ArrayList<Credit> = gson.fromJson(jsonFileString,listItemType)
 
 
 
@@ -35,16 +29,36 @@ class MainActivity : AppCompatActivity() {
         val btSubmit = findViewById<Button>(R.id.btSubmit)
         val btCredit = findViewById<Button>(R.id.btCredit)
 
+        btSubmit.setOnClickListener() {
 
-        btCredit.setOnClickListener() {
 
-            var intent = Intent(this@MainActivity, CreditActivity::class.java)
 
             var money: Float =  edtMoney.text.toString().toFloat()
             var interest: Float = edtInterest.text.toString().toFloat()
             var time:Int = edtTime.text.toString().toInt()
 
-            var amount =
+            var amount = (money + (money*(interest/100)*time)) / (time*12)
+            var intent = Intent(this@MainActivity, Second_Activity::class.java)
+            intent.putExtra("amount",amount!!)
+
+
+
+
+            startActivity(intent)
+
+
+
+
+
+        }
+
+
+
+        btCredit.setOnClickListener() {
+
+
+
+            var intent = Intent(this@MainActivity, CreditActivity::class.java)
 
 
 

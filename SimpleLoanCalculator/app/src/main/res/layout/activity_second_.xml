@@ -49,7 +49,8 @@
             android:id="@+id/btBack"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="คำนวณ"/>
+            android:text="ย้อนกลับ"
+            android:textSize="18dp"/>
     </LinearLayout>
 
 
